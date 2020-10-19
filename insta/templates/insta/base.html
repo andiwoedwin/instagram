@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'insta/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% if title %}
         <title>Instagram - {{ title }}</title>
     {% else %}
@@ -24,7 +25,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
               <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link" href="{% url 'instagram-home'%}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'instagram-home'%}"><i class="fa fa-home fa-2x" aria-hidden=""></i></a>
                 <a class="nav-item nav-link" href="{% url 'instagram-about'%}">About</a>
               </div>
               <!-- Navbar Right Side -->
@@ -34,7 +35,8 @@
                   <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
 
                 {% else %}
-                  <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                  <a class="nav-item nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+                  </a>
                   <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                 {% endif %}
               </div>
