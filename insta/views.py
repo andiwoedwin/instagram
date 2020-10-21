@@ -6,7 +6,7 @@ from .models import Post
 
 def welcome(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': post.objects.all()
     }
     return render(request, 'insta/home.html', context)
 
@@ -22,7 +22,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'image' ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -55,8 +55,8 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
         return False
 
-def about(request):
-    return render(request, 'insta/about.html',{'title':'About'})
+# def about(request):
+#     return render(request, 'insta/about.html',{'title':'About'})
 
 
 
